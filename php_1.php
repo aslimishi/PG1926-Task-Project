@@ -42,14 +42,21 @@ else{
 }
 
 ?>
+
 <html>
-<head>
-<title>Mesaj</title>
+     <head>
+         <meta charset="utf-8">
+         <title>Mesaj</title>
+         <style type="text/css"> </style>
 
-</head>
-<body>
+     </head>
+     
+     <body>
 
-<?php mesaj_yaz(); ?>
+         </div>
+             <?php echo "Saat : ".$saat."</br>" ?>
+             <?php mesaj_yaz(); "</br>"  ?>
+         </div>
 
-</body>
+     </body>
 </html>

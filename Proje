@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>
+            Vücut Kitle İndeksi Hesaplayıcı
+        </title>
+        <script type="text/javascript">
+        function VKIhesap()
+        {
+            var height=Number(document.getElementById("height").value);
+            var heightunits=document.getElementById("heightunits").value;
+            var weight=Number(document.getElementById("weight").value);           
+            var weightunits=document.getElementById("weightunits").value;
+
+            if (heightunits=="inches") height/=39.3700787;
+            if (weightunits=="lb") weight/2.20462;
+
+            var VKI=weight/Math.pow(height,2);
+
+            document.getElementById("çıktı").innerHTML=Math.round(VKI*100)/100;
+            
+            var çıktı = Math.round(VKI*100)/100
+         if (çıktı<18.5){
+                document.getElementById("sonuc").innerHTML = "zayıf";
+             }else if (çıktı>=18.5 && çıktı<=25){
+                document.getElementById("sonuc").innerHTML = "Normal";
+             }else if (çıktı>=25 && çıktı<=30){
+                document.getElementById("sonuc").innerHTML = "Fazla Kilolu";
+             }else if (çıktı>=30){
+                document.getElementById("sonuc").innerHTML = "Obez";
+             }
+        }
+        </script>
+    </head>
+    
+    <body bgcolor="#ff9cd1">
+            <h1>Vücut Kitle İndeksi Hesaplayıcı</h1>
+        <p>Boyunuzu Giriniz: <input type="text" id="height"/>
+        <select type="multiple" id="heightunits">
+            <option value="metres" selected="selected">metre</option>
+        </select>
+        </p>
+        <p>Kilonuzu Giriniz: <input type="text" id="weight"/>
+            <select type="multiple" id="weightunits">
+                <option value="kg" selected="selected">kilogram</option>
+            </select>
+            </p>
+            <input type="submit" value="VKIhesap" onclick="VKIhesap()" ;>
+            <h1>Vücut Kitle Endeksiniz: <span id="çıktı"></span></h1>
+            <h2>Sonucunuz: <span id="sonuc"> ?</span> </h2> 
+    </body>
+</html>
